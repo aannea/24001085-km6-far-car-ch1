@@ -30,7 +30,7 @@ class Car {
         <div class="card p-2 mb-2">
           <div class="card-body">
             <div class="image-card ">
-              <img src="${this.image}" class="w-100 object-fit-fill" alt="" style="max-height: 180px;"></div>
+              <img src="${this.image}" class="w-100" alt="" style="max-height: 180px;object-fit: cover;"></div>
             <div>
               <p class="mt-4">${this.manufacture}/${this.type}</p>
             </div>
