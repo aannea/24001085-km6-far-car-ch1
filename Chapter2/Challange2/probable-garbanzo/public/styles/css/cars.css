@@ -1,0 +1,83 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+.search {
+  margin-top: -160px !important;
+  box-shadow: 2px 19px 60px 8px rgba(0, 0, 0, 0.34);
+  background-color: white !important;
+  position: relative;
+  z-index: 2;
+}
+
+.search label {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  color: #3c3c3c;
+  padding-bottom: 5px;
+}
+
+.search input,
+.search select {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  color: green;
+}
+
+.search button {
+  margin-top: 18px;
+  margin-left: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.search-card {
+  background: #ffffff;
+  box-shadow: 2px 19px 60px 8px rgba(0, 0, 0, 0.34);
+  border-radius: 8% !important;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  color: #000000;
+}
+
+.search-card img {
+  border-radius: 5%;
+}
+
+.search-card svg {
+  margin-right: 10px;
+}
+
+.search-card span {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+}
+.search-card button {
+  margin-top: -8px !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.filter {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 60px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  scale: 1.0002;
+}
+
+.footer-section {
+  margin-top: 100px;
+}
