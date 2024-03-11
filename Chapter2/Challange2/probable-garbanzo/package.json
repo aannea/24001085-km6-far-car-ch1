@@ -1,6 +1,18 @@
 {
+  "name": "probable-garbanzo",
+  "version": "1.0.0",
+  "description": "- Mulai modifikasi file `server/index.js` apabila ingin membuat HTTP server. - Mulai modifikasi folder `public` apabila ingin memodifikasi HTML.",
+  "main": "/server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "node server/index.js",
+    "build": "node build server/index.js"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.18.3",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {}
 }
