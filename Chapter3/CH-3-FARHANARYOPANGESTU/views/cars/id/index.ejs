@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <title>Homepage</title>
+  </head>
+  <body>
+    <div>
+      <b>ID</b>
+      <p><%= id %></p>
+
+      <b>Brand</b>
+      <p><%= brand %></p>
+
+      <b>Model</b>
+      <p><%= model %></p>
+
+      <b>Year</b>
+      <p><%= year %></p>
+
+      <div>
+        <a href="/cars/<%= id %>/update">Update car</a>
+      </div>
+      <div>
+        <a href="/cars/<%= id %>/delete">Delete car</a>
+      </div>
+    </div>
+  </body>
+</html>
