@@ -39,13 +39,16 @@ app.get("/cars", (req, res) => {
   //   cars,
   // });
   res.send({
-    cars,
+    data: cars,
   });
 });
 
 // !Create /cars
 app.post("/cars", (req, res) => {
   try {
+    const dataCar = req.body;
+
+    if (!(dataCar.brand && dataCar.model && dataCar.year)) return res.status(400).send("Data tidak lengkap");
     const car = createcar(req.body);
     // res.redirect(200, `/cars/${car.id}`);
     res.send({
@@ -53,7 +56,9 @@ app.post("/cars", (req, res) => {
       data: car,
     });
   } catch (err) {
-    res.send("error:", err);
+    res.send({
+      error: err.message,
+    });
   }
 });
 
@@ -71,7 +76,9 @@ app.get("/cars/:id", (req, res) => {
       data: car,
     });
   } catch (err) {
-    res.send("error", err);
+    res.send({
+      error: err.message,
+    });
   }
 });
 
@@ -103,9 +110,11 @@ app.put("/cars/:id", (req, res) => {
     const idCar = req.params.id;
     const dataCar = req.body;
 
-    if (!car) return res.status(400).send("car not found!");
+    if (!(dataCar.brand && dataCar.model && dataCar.year)) return res.status(400).send("Data tidak lengkap");
 
     const newCar = updateCarByPut(idCar, dataCar);
+
+    if (!newCar) return res.status(400).send("car not found!");
 
     // res.redirect(200, `/cars/${car.id}`);
     res.send({
@@ -113,7 +122,9 @@ app.put("/cars/:id", (req, res) => {
       data: newCar,
     });
   } catch (err) {
-    res.send("error:", err);
+    res.send({
+      error: err.message,
+    });
   }
 });
 
@@ -122,17 +133,23 @@ app.patch("/cars/:id", (req, res) => {
     const idCar = req.params.id;
     const dataCar = req.body;
 
-    if (!car) return res.status(400).send("car not found!");
-
     const newCar = updateCarByPatch(idCar, dataCar);
+    const detailCar = getcar(idCar);
+
+    if (!newCar) return res.status(400).send("car not found!");
+
+    console.log(detailCar);
 
     // res.redirect(200, `/cars/${car.id}`);
     res.send({
       message: "Update Successfully",
-      data: newCar,
+      dataLama: detailCar,
+      dataBaru: newCar,
     });
   } catch (err) {
-    res.send("error:", err);
+    res.send({
+      error: err.message,
+    });
   }
 });
 

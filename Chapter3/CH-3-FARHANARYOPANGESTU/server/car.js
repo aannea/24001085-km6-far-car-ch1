@@ -18,18 +18,17 @@ function createcar(car) {
   return car;
 }
 
-// Function untuk update car put
+// update car put
 function updateCarByPatch(id, updateCar) {
   // Mencari indeks mobil yang sesuai dengan ID
-  const index = cars.findIndex((car) => car.id === id);
+  const index = cars.find((car) => car.id === id);
 
   if (index !== -1) {
     // Jika mobil dengan ID yang diberikan ditemukan
     // Memperbarui mobil dengan data yang baru
     cars[index] = { ...cars[index], ...updateCar };
+
     return cars[index]; // Mengembalikan mobil yang telah diperbarui
-  } else {
-    return null; // Jika mobil tidak ditemukan, mengembalikan null
   }
 }
 
@@ -39,7 +38,7 @@ function updateCarByPut(id, updateCar) {
     return;
   }
 
-  updateCar(id, updateCar);
+  updateCarByPatch(id, updateCar);
 }
 
 function listcars() {
